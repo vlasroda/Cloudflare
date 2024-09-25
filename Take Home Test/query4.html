@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/iframe.css">
+    <title>Q4</title>
+</head>
+<body>
+    <main>
+        <section class="entry-content">
+            <h2>Q4. Cloudflare Nameservers</h2>
+            <h3>How are Cloudflare's nameservers different from the DNS provided by Google DNS or OpenDNS?
+                <br/>Can I delegate to Cloudflare nameservers while still using my host’s DNS?</h3>
+            <pre class="answer">
+                As a member of the Cloudflare Customer Support Team, I'll do my best to explain the differences between Cloudflare's nameservers and other public DNS providers like Google DNS or OpenDNS, as well as address your query about delegating to Cloudflare nameservers while still using your host's DNS.
+            </pre>
+            <pre class="thinking">
+                Thought Process:
+                <ol>
+                    <li>Cloudflare's nameservers are part of our global Anycast network, designed to provide fast DNS resolution and additional security features like DDoS protection and web application firewall.
+                    <li>Public DNS providers like Google DNS and OpenDNS primarily focus on fast and reliable DNS resolution, but they don't offer the additional security and performance features provided by Cloudflare.
+                    <li>It is possible to delegate DNS to Cloudflare's nameservers while still using the host's DNS for other services, but there are some considerations to keep in mind.
+                </ol>
+                Tools I would use:
+                <ul>
+                    <li>Cloudflare documentation: To ensure I have the latest and most accurate information about Cloudflare's DNS services and features.
+                    <li>DNS propagation and lookup tools: To verify the correct delegation and resolution of DNS records after making changes.
+                </ul>
+            After reviewing the relevant information, I would provide the customer with the following response:
+            </pre>
+            <pre class="answer">
+                Cloudflare's nameservers are part of our global Anycast network, which is designed to provide fast and secure DNS resolution, as well as additional security features like DDoS protection and web application firewall. Unlike public DNS providers like Google DNS or OpenDNS, which primarily focus on fast and reliable DNS resolution, Cloudflare's nameservers offer a more comprehensive set of performance and security features for your domain.
+
+                Regarding your question about delegating to Cloudflare nameservers while still using your host's DNS, it is possible to do so, but there are some considerations to keep in mind:
+                <ol>
+                    <li>You would need to update your domain's nameserver records at your domain registrar to point to Cloudflare's nameservers. This would essentially delegate the DNS resolution for your domain to Cloudflare's network.
+                    <li>However, you can still continue to use your host's DNS for other services or subdomains that are not being proxied through Cloudflare. This can be achieved by creating appropriate DNS records within your Cloudflare account.
+                    <li>It's important to note that by delegating DNS to Cloudflare, you would be relying on Cloudflare's network for the resolution of your domain, which may impact the performance and availability of services that are not being proxied through Cloudflare.
+                </ol>
+                If you decide to proceed with delegating DNS to Cloudflare while still using your host's DNS, I recommend consulting with our technical documentation and best practices to ensure a smooth transition and proper configuration. Additionally, I would be happy to assist you further with the delegation process and provide guidance on setting up the appropriate DNS records within your Cloudflare account.
+
+                Please let me know if you have any further questions or concerns, and I'll be glad to provide additional clarification or assistance.
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

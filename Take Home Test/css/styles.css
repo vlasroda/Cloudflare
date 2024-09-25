@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../img/clouds.png') no-repeat center center fixed; /* Adjust the path if needed */
+    background-size: cover;
+    color: #fff;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: background 0.3s, border-radius 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 60vh; /* Adjust height if needed */
+    padding: 20px;
+    margin-top: 80px; /* Space to avoid overlap with the fixed nav */
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 77px;
+    margin: 0;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.iframe-container {
+    position: absolute; /* Absolute positioning */
+    top: 80px; /* Below the header */
+    left: 0;
+    right: 0;
+    bottom: 80px; 
+    display: none; /* Hide by default */
+    z-index: 50; /* Ensure it's above other content */
+    padding: 0; /* Remove padding */
+}
+
+.responsive-iframe {
+    width: calc(90% - 80px); /* Full width minus margins */
+    height: 100%; /* Full height of the container */
+    border: none;
+    border-radius: 15px; /* Rounded corners */
+    margin: 0 auto; /* Center the iframe with equal margins */
+    display: block; /* Ensure it behaves like a block element */
+    opacity: 0.9;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

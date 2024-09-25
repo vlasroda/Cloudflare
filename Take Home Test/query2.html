@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/iframe.css">
+    <title>Q2</title>
+</head>
+<body>
+    <main>
+        <section class="entry-content">
+            <h2>Q2. Why is my site coming from California?!</h2>
+            <h3>I’m in London, but looking at your IPs it shows that you are serving my website from California.
+                <br/>Can that be right? Why is that?
+                <br/>I thought you were supposed to serve my website from some places close to me?</h3>
+                <pre class="answer">
+                    Thank you for providing more details about your location and the concern regarding the server's geographic location. As a member of the Cloudflare Customer Support Team, I'll do my best to address your query.
+                </pre>
+                <pre class="thinking">
+                    Thought Process:
+                    <ol>
+                        <li>Cloudflare's Anycast network is designed to automatically route traffic to the nearest data center, providing optimal performance and low latency.
+                        <li>However, there could be instances where the traffic is routed to a different data center due to various factors, such as load balancing, network conditions, or regional capacity constraints.
+                        <li>To investigate further, I would need to check the customer's Cloudflare configuration settings, specifically the "Static IP Anycast" and "Geo Routing" options.
+                    </ol>
+                    Tools I would use:
+                    <ul>
+                        <li>Cloudflare Dashboard: To review the customer's account settings and configurations.
+                        <li>IP Geolocation tools: To verify the physical location of the IP addresses serving the customer's website.
+                        <li>Network diagnostic tools: To trace the network path and identify potential routing issues or optimizations.
+                    </ul>
+                    After reviewing the relevant information, I would provide the customer with the following response:
+                </pre>
+                <pre class="answer">
+                    Thank you for raising this concern about the geographic location of the server serving your website. While Cloudflare's Anycast network is designed to automatically route traffic to the nearest data center, there could be scenarios where your traffic is being served from a different region, such as California in your case.
+                
+                    To better understand the situation, I would need to review your Cloudflare account settings and configurations. Specifically, I would check if you have enabled any specific options like "Static IP Anycast" or "Geo Routing," which could influence the server's location.
+                
+                    Additionally, I would run some network diagnostic tools to trace the network path and identify any potential routing issues or optimizations that could be made to improve the performance and reduce latency for your visitors in the London region.
+                
+                    Could you please confirm if you have enabled any specific settings related to server location or IP addressing within your Cloudflare account? This information will help me provide a more accurate assessment and recommend the appropriate steps to ensure your website is being served from a location closer to your target audience.
+                
+                    Please feel free to share any additional details or concerns you may have, and I'll be happy to assist you further.
+               </pre>
+        </section>
+    </main>
+</body>
+</html>

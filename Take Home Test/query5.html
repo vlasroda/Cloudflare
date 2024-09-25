@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/iframe.css">
+    <title>Q5</title>
+</head>
+<body>
+    <main>
+        <section class="entry-content">
+            <h2>Q5. Content not Being Cached</h2>
+            <h3>After activating Cloudflare on my site, I am seeing that resources on my pages are not being cached:</h3>
+            <pre>
+                curl -svo /dev/null roskolniv.us
+                * Rebuilt URL to: roskolniv.us/
+                * Trying 104.16.27.128...
+                * Connected to roskolniv.us (127.0.0.1) port 80 (#0)
+                > GET / HTTP/1.1
+                > User-Agent: curl/7.40.0
+                > Host: roskolniv.us
+                > Accept: */*
+                >
+                < HTTP/1.1 200 OK
+                < Date: Mon, 22 Jun 2015 03:03:59 GMT
+                < Content-Type: text/html; charset=utf-8
+                < Transfer-Encoding: chunked
+                < Connection: keep-alive
+                < Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0
+                < Strict-Transport-Security: max-age=10
+                
+                < X-Powered-By: Express
+                < Server: cloudflare-nginx
+                < CF-RAY: 1fa4b922fef517a4-SIN
+                <
+                { [3507 bytes data]
+                * Connection #0 to host roskolniv.us left intact
+            </pre>
+            <h3>Why is Cloudflare’s caching not working on my site?</h3>
+            <pre class="answer">
+                Thank you for raising this issue regarding the lack of caching for resources on your site after enabling Cloudflare. As a member of the Cloudflare Customer Support Team, I'll do my best to investigate and provide a solution.
+            </pre>
+            <pre class="thinking">
+                Thought Process:
+                <ol>
+                    <li>The Cache-Control header seen in the response indicates that the origin server is instructing Cloudflare not to cache the resources.
+                    <li>This header is typically set by the web server or application serving the content, and it overrides Cloudflare's default caching behavior.
+                    <li>To enable caching we would need to adjust the caching settings either on the origin server or within the Cloudflare account.
+                </ol>
+                Tools I would use:
+                <ul>
+                    <li>Cloudflare Caching documentation: To review the recommended caching settings and best practices for different types of resources.
+                    <li>Cloudflare Page Rules: To configure caching rules for specific URLs or file types on the Cloudflare side.
+                    <li>Web server or application documentation: To understand how to adjust caching settings on the origin server, if necessary.
+                </ul>
+                After reviewing the relevant information, I would provide the customer with the following response:
+            </pre>
+            <pre class="answer">
+                Based on the output you've provided, it appears that your origin server is explicitly instructing Cloudflare not to cache the resources by setting the Cache-Control header with the values no-store, no-cache, must-revalidate, and max-age=0. This header overrides Cloudflare's default caching behavior and prevents the resources from being cached.
+
+                To enable caching for your resources, you have two main options:
+                <ol>
+                    <li>Adjust the caching settings on your origin server: If you have control over your web server or application configuration, you can modify the Cache-Control header to instruct Cloudflare to cache the resources. For example, setting Cache-Control: public, max-age=3600 would allow Cloudflare to cache the resources for up to one hour.
+                    <li>Configure caching rules in your Cloudflare account: Alternatively, you can create caching rules within your Cloudflare account using Page Rules. Page Rules allow you to override the caching settings for specific URLs or file types, even if your origin server is sending the no-cache directive.
+                </ol>
+                To configure caching rules in your Cloudflare account, follow these steps:
+                <ol>
+                    <li>Log in to your Cloudflare Dashboard and navigate to the "Page Rules" section.
+                    <li>Click "Create Page Rule" and set the appropriate URL pattern to match the resources you want to cache (e.g., *.js, *.css, *.png, etc.).
+                    <li>Under "Settings," choose "Cache Level" and set the desired caching behavior (e.g., "Cache Everything" or "Ignore Query String").
+                    <li>Save the Page Rule, and Cloudflare will cache the matched resources according to the specified caching settings.
+                </ol>
+                Please note that caching static resources like JavaScript, CSS, and image files is generally recommended for better performance, but you may want to adjust the caching rules for dynamic or user-specific content as needed.
+
+                If you require further assistance or have any additional questions, please don't hesitate to let me know. I'll be happy to provide more detailed guidance on configuring caching settings or any other aspect of Cloudflare's services.
+            </pre>
+        </section>
+    </main>
+</body>
+</html>
